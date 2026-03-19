@@ -1,0 +1,1131 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova & Anchor Technical Services LLC — UAE Contracting & MEP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --navy:      #0F2B46;
+    --navy-deep: #091D31;
+    --navy-mid:  #163959;
+    --teal:      #14B8A6;
+    --teal-dk:   #0D9488;
+    --teal-deep: #0A7A6E;
+    --teal-pale: #CCFBF1;
+    --bg:        #F3F4F6;
+    --white:     #FFFFFF;
+    --text-h:    #0F2B46;
+    --text-b:    #374151;
+    --text-m:    #6B7280;
+    --text-l:    #9CA3AF;
+    --border:    #E5E7EB;
+    --sh-sm:  0 2px 8px rgba(15,43,70,.08);
+    --sh-md:  0 8px 28px rgba(15,43,70,.12);
+    --sh-lg:  0 20px 60px rgba(15,43,70,.16);
+    --sh-t:   0 8px 28px rgba(20,184,166,.30);
+    --r: 10px; --rlg: 18px; --pill: 999px;
+  }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hr-content {
+  animation: fadeUp .7s .28s ease both, float 4s 1s ease-in-out infinite;
+}
+
+.hero-cert {
+  animation: fadeUp .7s .42s ease both, float 4s 1.5s ease-in-out infinite;
+}
+
+  *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text-b); font-family: 'Sora', sans-serif; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { display: block; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--navy-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+  h1,h2,h3,h4 { font-family: 'Sora', sans-serif; color: var(--text-h); line-height: 1.1; font-weight: 800; }
+  h1 { font-size: clamp(2rem, 4vw, 4.5rem); letter-spacing: -.03em; }
+  h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.025em; }
+  h3 { font-size: 1.1rem; font-weight: 700; }
+  h4 { font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  p { line-height: 1.8; font-weight: 300; }
+  .serif { font-family: 'DM Serif Display', serif; font-style: italic; font-weight: 400; }
+
+  .eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; }
+  .eyebrow::before { content: ''; width: 22px; height: 2px; background: var(--teal); border-radius: 1px; flex-shrink: 0; }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 5%; }
+
+  /* === BUTTONS === */
+  .btn { display: inline-flex; align-items: center; gap: .55rem; font-family: 'Sora', sans-serif; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border: none; border-radius: var(--pill); padding: .85rem 1.9rem; transition: all .3s cubic-bezier(.34,1.5,.64,1); }
+  .btn svg { transition: transform .25s; }
+  .btn:hover svg { transform: translateX(4px); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-teal { background: var(--teal); color: #fff; box-shadow: var(--sh-t); }
+  .btn-teal:hover { background: var(--teal-dk); box-shadow: 0 12px 36px rgba(20,184,166,.4); }
+  .btn-navy { background: var(--navy); color: #fff; box-shadow: var(--sh-md); }
+  .btn-navy:hover { background: var(--navy-mid); }
+  .btn-ghost { background: rgba(255,255,255,.1); color: #fff; border: 2px solid rgba(255,255,255,.35); }
+  .btn-ghost:hover { background: rgba(255,255,255,.2); border-color: #fff; }
+  .btn-wf { background: #fff; color: var(--navy); box-shadow: var(--sh-md); }
+  .btn-wf:hover { background: var(--teal); color: #fff; box-shadow: var(--sh-t); }
+  .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--border); }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* === NAV === */
+  #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 5%; transition: all .4s; }
+  #nav.stuck { background: rgba(255,255,255,.97); backdrop-filter: blur(20px); padding: 1rem 5%; box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(15,43,70,.07); }
+  .logo { display: flex; align-items: center; gap: .8rem; }
+  .logo-mark { width: 38px; height: 38px; border-radius: 9px; background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; overflow: hidden; }
+  .logo-mark::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--teal); }
+  .logo-mark svg { color: #fff; }
+  .logo-text strong { display: block; font-size: .95rem; font-weight: 800; color: var(--navy); letter-spacing: -.01em; line-height: 1; }
+  .logo-text span { font-size: .55rem; font-weight: 500; color: var(--text-m); letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; display: block; }
+  #nav:not(.stuck) .logo-text strong { color: #fff; }
+  #nav:not(.stuck) .logo-text span { color: rgba(255,255,255,.55); }
+  #nav:not(.stuck) .logo-mark { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); }
+  #nav:not(.stuck) .logo-mark::after { display: none; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; }
+  .nav-links a { font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: rgba(255,255,255,.8); transition: color .25s; }
+  #nav.stuck .nav-links a { color: var(--text-m); }
+  .nav-links a:hover, #nav.stuck .nav-links a:hover { color: var(--teal); }
+ .nav-cta { padding: .6rem 1.4rem; font-size: .72rem; color: #fff !important; }
+.nav-cta:hover { background: var(--navy); box-shadow: var(--sh-md); transform: translateY(-2px); color: #fff !important; }
+  .ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .ham span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 1px; transition: .3s; }
+  #nav.stuck .ham span { background: var(--navy); }
+  .mob { display: none; position: fixed; inset: 0; background: var(--navy-deep); z-index: 950; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mob.open { display: flex; }
+  .mob a { font-size: 2rem; font-weight: 800; color: #fff; transition: color .25s; }
+  .mob a:hover { color: var(--teal); }
+  .mob-x { position: absolute; top: 1.5rem; right: 5%; font-size: 1.5rem; background: none; border: none; color: #fff; cursor: pointer; padding: 8px; }
+
+  /* === HERO — split screen === */
+ #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+
+  .hl { background: var(--navy-deep); padding: 10rem 8% 6rem 12%; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; z-index: 1; }
+  .hl::before { content: ''; position: absolute; top: -120px; left: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(20,184,166,.12), transparent 65%); pointer-events: none; }
+  .hl::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(20,184,166,.08), transparent 65%); pointer-events: none; }
+  .hl-cut { position: absolute; top: 0; right: -60px; width: 120px; height: 100%; background: var(--navy-deep); clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%); z-index: 2; }
+  .hl h1 { color: #fff; margin-bottom: 1.6rem; position: relative; z-index: 3; }
+  .hl h1 .at { color: var(--teal); }
+  .hl-desc { color: rgba(255,255,255,.65); font-size: 1rem; max-width: 440px; margin-bottom: 2.5rem; line-height: 1.8; position: relative; z-index: 3; }
+  .hl-btns { display: flex; gap: .8rem; flex-wrap: wrap; position: relative; z-index: 3; }
+  .hl-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,.1); position: relative; z-index: 3; }
+  .sn { font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; }
+  .sn em { font-style: normal; color: var(--teal); font-size: 1.2rem; }
+  .sl { font-size: .7rem; color: rgba(255,255,255,.5); margin-top: 4px; line-height: 1.35; }
+
+  /* Hero right — photo background with service list overlay */
+ /* Hero right — photo background with floating card */
+.hr {
+  position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.hr-card {
+  position: relative; z-index: 2;
+  background: rgba(9,25,43,.72);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 18px; padding: 1.4rem 1.4rem 1.2rem;
+  width: min(340px, 85%);
+  box-shadow: 0 24px 64px rgba(0,0,0,.35);
+}
+.hr-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.hr-card-label { font-size: .62rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+.hr-card-badge { background: var(--teal); color: #fff; font-size: .58rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: var(--pill); }
+.hr-trusted {
+  position: absolute; bottom: 2.5rem; right: 2rem; z-index: 3;
+  background: #fff; border-radius: 12px; padding: .75rem 1rem;
+  box-shadow: 0 10px 36px rgba(0,0,0,.22); min-width: 185px;
+}
+.hr-trusted-stars { display: flex; gap: 2px; margin-bottom: .3rem; }
+.hr-trusted-stars svg { color: #F59E0B; }
+.hr-trusted strong { display: block; font-size: .78rem; font-weight: 800; color: var(--navy); }
+.hr-trusted span { font-size: .64rem; color: var(--text-m); display: block; margin-top: 2px; }
+  .hr-bg {
+    position: absolute; inset: 0;
+    background-image: url('Hero-image.jpg');
+    background-size: cover; background-position: center top;
+  }
+  .hr-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(9,29,49,.3) 0%, rgba(9,29,49,.92) 55%, rgba(9,29,49,.98) 100%);
+  }
+  .hr-content { position: relative; z-index: 2;margin-right: 2rem; padding: 1rem; background: rgba(9,25,43,.72); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.13); border-radius: 18px; width: min(460px, 90%); margin: 0 auto; } 
+  .hr-label { font-size: .68rem; font-weight: 700; letter-spacng: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.5rem; display: flex; align-items: center; gap: .6rem; }
+  .hr-label::before { content: ''; width: 20px; height: 2px; background: var(--teal); }
+  .spills { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 2rem; }
+  .sp { display: flex; align-items: center; gap: .9rem; padding: .8rem 1rem; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: var(--r); transition: all .3s; }
+  .sp:hover { background: rgba(20,184,166,.15); border-color: rgba(20,184,166,.35); transform: translateX(5px); }
+  .sp-ic { width: 34px; height: 34px; border-radius: 8px; background: rgba(20,184,166,.18); color: var(--teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .sp-tx { font-size: .82rem; font-weight: 600; color: rgba(255,255,255,.9); }
+  .hero-cert { display: inline-flex; align-items: center; gap: .6rem; background: rgba(255,255,255,.1); color: #fff; padding: .7rem 1.2rem; border-radius: var(--pill); font-size: .7rem; font-weight: 700; letter-spacing: .05em; border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(8px); }
+  .hero-cert span { background: var(--teal); color: #fff; padding: 2px 8px; border-radius: var(--pill); font-size: .62rem; }
+
+  /* === TRUST STRIP === */
+#trust { background: var(--navy); overflow: hidden; }
+.trust-w { display: flex; align-items: stretch; width: max-content; animation: marquee 18s linear infinite; flex-wrap: nowrap; }
+.trust-w:hover { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ti { display: flex; align-items: center; gap: .6rem; flex: none; white-space: nowrap; padding: 1.2rem 2.5rem; border-right: 1px solid rgba(255,255,255,.07); border-bottom: none; font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); transition: color .25s; }
+.ti:last-child { border-right: 1px solid rgba(255,255,255,.07); }
+.ti:hover { color: var(--teal); }
+.ti svg { color: var(--teal); flex-shrink: 0; opacity: .8; }
+
+  /* === ABOUT — with image === */
+  #about { padding: 8rem 0; background: var(--white); }
+  .about-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: center; margin-top: 4rem; }
+
+  .about-img-col { position: relative; }
+  .about-img-main { border-radius: var(--rlg); overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--sh-lg); }
+  .about-img-main img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .about-img-main:hover img { transform: scale(1.04); }
+  .about-img-accent {
+    position: absolute; bottom: -2rem; right: -2rem;
+    width: 55%; border-radius: var(--rlg); overflow: hidden;
+    box-shadow: 0 20px 50px rgba(15,43,70,.25);
+    border: 4px solid var(--white);
+  }
+  .about-img-accent img { width: 100%; height: 180px; object-fit: cover; }
+  .about-stat-badge {
+    position: absolute; top: 1.5rem; left: 1.5rem;
+    background: var(--teal); color: #fff;
+    padding: 1rem 1.4rem; border-radius: var(--rlg);
+    text-align: center; box-shadow: var(--sh-t); z-index: 2;
+  }
+  .about-stat-badge .asb-num { font-size: 2rem; font-weight: 900; line-height: 1; }
+  .about-stat-badge .asb-txt { font-size: .6rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; opacity: .85; margin-top: 2px; display: block; }
+
+  .about-text h2 { margin: .5rem 0 1.2rem; }
+  .about-text > p { color: var(--text-m); font-size: .95rem; line-height: 1.85; margin-bottom: 1rem; }
+  .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 2rem; }
+  .pillar { padding: 1.1rem 1.2rem; background: var(--bg); border-radius: var(--r); border-left: 3px solid var(--teal); transition: all .25s; }
+  .pillar:nth-child(2) { border-left-color: var(--navy); }
+  .pillar:nth-child(3) { border-left-color: var(--navy); }
+  .pillar:nth-child(4) { border-left-color: var(--teal); }
+  .pillar:hover { background: var(--white); box-shadow: var(--sh-sm); transform: translateX(3px); }
+  .pillar h4 { font-size: .78rem; color: var(--navy); margin-bottom: .3rem; text-transform: none; letter-spacing: 0; }
+  .pillar p { font-size: .78rem; color: var(--text-m); margin: 0; line-height: 1.5; }
+
+  /* === SERVICES — sticky sidebar + grid === */
+  #services { padding: 8rem 0; background: var(--bg); }
+  .svc-layout { display: grid; grid-template-columns: 280px 1fr; gap: 5rem; align-items: start; }
+  .svc-head { position: sticky; top: 100px; }
+  .svc-head h2 { margin: .6rem 0 1.2rem; }
+  .svc-head p { font-size: .9rem; color: var(--text-m); line-height: 1.8; margin-bottom: 2rem; }
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .sv { background: var(--white); border: 1px solid var(--border); border-radius: var(--rlg); padding: 1.8rem; transition: all .32s cubic-bezier(.34,1.2,.64,1); position: relative; overflow: hidden; }
+  .sv::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--navy)); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+  .sv:hover { box-shadow: var(--sh-lg); transform: translateY(-5px); border-color: transparent; }
+  .sv:hover::after { transform: scaleX(1); }
+  .sv-n { font-size: 2.8rem; font-weight: 900; color: rgba(15,43,70,.05); position: absolute; top: .8rem; right: 1.2rem; line-height: 1; transition: color .3s; }
+  .sv:hover .sv-n { color: rgba(20,184,166,.1); }
+  .sv-ic { width: 50px; height: 50px; border-radius: 12px; background: var(--teal-pale); color: var(--teal-dk); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; transition: all .3s; }
+  .sv:hover .sv-ic { background: var(--teal); color: #fff; box-shadow: var(--sh-t); }
+  .sv h3 { font-size: 1rem; color: var(--navy); margin-bottom: .6rem; }
+  .sv p { font-size: .8rem; color: var(--text-m); line-height: 1.7; margin-bottom: 1rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+  .chip { font-size: .6rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: var(--pill); background: var(--teal-pale); color: var(--teal-deep); border: 1px solid rgba(20,184,166,.2); }
+
+  /* === WHY US — dark section === */
+  #why { padding: 8rem 0; background: var(--navy-deep); position: relative; overflow: hidden; }
+  #why::before { content: ''; position: absolute; top: -200px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(20,184,166,.07), transparent 60%); pointer-events: none; }
+  .why-lay { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
+  .wl h2 { color: #fff; margin-bottom: 1.2rem; }
+  .wl h2 em { font-family: 'DM Serif Display', serif; font-style: italic; font-weight: 400; color: var(--teal); }
+  .wl > p { color: rgba(255,255,255,.6); margin-bottom: 3rem; font-size: .95rem; }
+  .wlist { display: flex; flex-direction: column; gap: 1rem; }
+  .wli { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: var(--r); transition: all .3s; }
+  .wli:hover { background: rgba(255,255,255,.07); border-color: rgba(20,184,166,.25); transform: translateX(6px); }
+  .wli-ic { width: 40px; height: 40px; flex-shrink: 0; border-radius: 9px; background: rgba(20,184,166,.14); color: var(--teal); display: flex; align-items: center; justify-content: center; }
+  .wli-tx h4 { color: #fff; margin-bottom: .25rem; font-size: .85rem; text-transform: none; letter-spacing: 0; }
+  .wli-tx p { font-size: .78rem; color: rgba(255,255,255,.5); margin: 0; line-height: 1.5; }
+  .cg { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); border-radius: var(--rlg); overflow: hidden; }
+  .cc { padding: 2rem; background: rgba(15,43,70,.5); text-align: center; transition: background .3s; }
+  .cc:hover { background: rgba(20,184,166,.08); }
+  .cc-v { font-size: 3rem; font-weight: 900; color: #fff; line-height: 1; }
+  .cc-v em { font-style: normal; color: var(--teal); font-size: 1.6rem; }
+  .cc-l { font-size: .7rem; color: rgba(255,255,255,.5); margin-top: .5rem; letter-spacing: .04em; line-height: 1.4; display: block; }
+  .why-cta { margin-top: 2rem; display: flex; justify-content: center; }
+
+  /* === PHOTO STRIP — full bleed === */
+  #photo-strip { display: grid; grid-template-columns: repeat(4,1fr); height: 340px; overflow: hidden; }
+  .ps { position: relative; overflow: hidden; }
+  .ps img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .ps:hover img { transform: scale(1.07); }
+  .ps-cap { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(9,29,49,.85), transparent); padding: 1.5rem 1rem .9rem; opacity: 0; transition: opacity .35s; }
+  .ps:hover .ps-cap { opacity: 1; }
+  .ps-cap span { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+
+  /* === TEAM & TESTIMONIALS === */
+  #team { padding: 8rem 0; background: var(--bg); }
+  .team-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .team-img-col { position: relative; }
+  .team-img-main { border-radius: var(--rlg); overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--sh-lg); }
+  .team-img-main img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+  .team-img-main:hover img { transform: scale(1.04); }
+  .team-img-sm { position: absolute; bottom: -2rem; right: -2rem; width: 50%; border-radius: var(--rlg); overflow: hidden; border: 4px solid var(--white); box-shadow: var(--sh-lg); }
+  .team-img-sm img { width: 100%; height: 170px; object-fit: cover; }
+  .team-pill { position: absolute; top: 1.5rem; left: 1.5rem; background: var(--teal); color: #fff; padding: .6rem 1.1rem; border-radius: var(--pill); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; box-shadow: var(--sh-t); display: flex; align-items: center; gap: .4rem; z-index: 2; }
+  .team-pill::before { content: ''; width: 7px; height: 7px; background: rgba(255,255,255,.7); border-radius: 50%; }
+  .team-text h2 { margin: .5rem 0 1.2rem; }
+  .team-text > p { color: var(--text-m); font-size: .95rem; line-height: 1.85; margin-bottom: .8rem; }
+  .tqs { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .tq { padding: 1.3rem 1.4rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); border-left: 3px solid var(--teal); transition: all .3s; }
+  .tq:hover { box-shadow: var(--sh-sm); transform: translateX(4px); }
+  .tq-body { font-size: .85rem; color: var(--text-b); font-style: italic; margin-bottom: .9rem; line-height: 1.7; }
+  .tq-author { display: flex; align-items: center; gap: .75rem; }
+  .tq-av { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--teal-pale); }
+  .tq-av img { width: 100%; height: 100%; object-fit: cover; }
+  .tq-name { font-size: .75rem; font-weight: 700; color: var(--navy); }
+  .tq-role { font-size: .68rem; color: var(--text-m); }
+
+  /* === GALLERY === */
+  #gallery { padding: 6rem 0; background: var(--white); }
+  .gallery-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; margin-top: 3rem; }
+  .gi { border-radius: var(--rlg); overflow: hidden; position: relative; }
+  .gi img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+  .gi:hover img { transform: scale(1.06); }
+  .gi-main { grid-column: 1; grid-row: 1/3; min-height: 420px; }
+  .gi-sm { min-height: 195px; }
+  .gi-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(9,29,49,.65) 0%, transparent 50%); opacity: 0; transition: opacity .35s; display: flex; align-items: flex-end; padding: 1.2rem; }
+  .gi:hover .gi-ov { opacity: 1; }
+  .gi-ov span { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+
+  /* === SECTORS === */
+  #sectors { padding: 8rem 0; background: var(--bg); }
+  .sec-strip { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; margin-top: 4rem; }
+  .sc { background: var(--white); border: 1px solid var(--border); border-radius: var(--rlg); padding: 2rem 1.5rem 1.5rem; transition: all .35s; display: flex; flex-direction: column; }
+  .sc:hover { box-shadow: var(--sh-md); transform: translateY(-6px); border-color: transparent; }
+  .sc-n { font-size: .65rem; font-weight: 700; letter-spacing: .15em; color: var(--teal); margin-bottom: .8rem; display: block; }
+  .sc-ic { width: 52px; height: 52px; border-radius: 14px; background: var(--teal-pale); color: var(--teal-dk); display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; transition: all .3s; }
+  .sc:hover .sc-ic { background: var(--teal); color: #fff; box-shadow: var(--sh-t); }
+  .sc h3 { font-size: .95rem; color: var(--navy); margin-bottom: .5rem; }
+  .sc p { font-size: .78rem; color: var(--text-m); line-height: 1.6; flex: 1; }
+  .sc-arr { display: flex; align-items: center; gap: .3rem; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--teal); margin-top: 1.2rem; transition: gap .25s; }
+  .sc:hover .sc-arr { gap: .6rem; }
+
+  /* === CTA BAND === */
+  #cta-band { padding: 6rem 0; background: linear-gradient(135deg, var(--teal-deep), var(--teal)); position: relative; overflow: hidden; }
+  #cta-band::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: rgba(255,255,255,.06); border-radius: 50%; pointer-events: none; }
+  #cta-band::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 300px; height: 300px; background: rgba(255,255,255,.04); border-radius: 50%; pointer-events: none; }
+  .cband { display: flex; align-items: center; justify-content: space-between; gap: 3rem; flex-wrap: wrap; position: relative; z-index: 1; }
+  .cband-tx h2 { color: #fff; margin-bottom: .6rem; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+  .cband-tx p { color: rgba(255,255,255,.8); max-width: 540px; font-size: .95rem; }
+  .cband-bt { display: flex; gap: .8rem; flex-shrink: 0; flex-wrap: wrap; }
+
+  /* === PROCESS === */
+  #process { padding: 8rem 0; background: var(--white); }
+  .ptl { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 5rem; position: relative; }
+  .ptl::before { content: ''; position: absolute; top: 38px; left: calc(12.5%); right: calc(12.5%); height: 1px; background: linear-gradient(90deg, var(--teal), rgba(20,184,166,.2), var(--teal)); z-index: 0; }
+  .pt { padding: 0 1.5rem; text-align: center; position: relative; z-index: 1; }
+  .pt-b { width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 2rem; background: var(--bg); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; transition: all .35s; box-shadow: var(--sh-sm); }
+  .pt-b .pn { font-size: 1.5rem; font-weight: 800; color: var(--navy); line-height: 1; }
+  .pt:hover .pt-b { background: var(--teal); border-color: var(--teal); box-shadow: var(--sh-t); transform: scale(1.08); }
+  .pt:hover .pt-b .pn { color: #fff; }
+  .pt h3 { font-size: .92rem; color: var(--navy); margin-bottom: .5rem; }
+  .pt p { font-size: .78rem; color: var(--text-m); line-height: 1.65; }
+
+  /* === CONTACT === */
+#contact { padding: 8rem 0; background:url('umit-yildirim-9OB46apMbC4-unsplash.png') center/cover no-repeat; }
+  .ct-lay { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; }
+  .ct-info h2 { margin-bottom: 1rem; margin-bottom: 3rem;  }
+  .ct-info > p { color: var(--text-m); font-size: .95rem; margin-bottom: 2.5rem; line-height: 1.8; }
+  .ci-list { display: flex; flex-direction: column; gap: 1rem; }
+  .ci-item { display: flex; gap: .9rem; align-items: flex-start; padding: 1rem 1.1rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--r); transition: all .25s; }
+  .ci-item:hover { box-shadow: var(--sh-sm); transform: translateX(4px); border-color: var(--teal); }
+  .ci-ic { width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0; background: var(--teal-pale); color: var(--teal-dk); display: flex; align-items: center; justify-content: center; }
+.ci-tx strong { font-size: .63rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-m); display: block; margin-bottom: 2px; }
+.ci-tx a, .ci-tx span { font-size: .875rem; color: var(--navy); font-weight: 500; }
+  .ci-tx a:hover { color: var(--teal); }
+  .ct-form { background: var(--white); border: 1px solid var(--border); border-radius: var(--rlg); padding: 2.5rem; }
+  .ct-fh { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .ct-fh h3 { color: var(--navy); font-size: 1.3rem; margin-bottom: .3rem; }
+  .ct-fh p { font-size: .8rem; color: var(--text-m); margin: 0; }
+  .fg { margin-bottom: .9rem; }
+  .fr { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: .9rem; }
+  .fg label { display: block; font-size: .63rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-m); margin-bottom: .4rem; }
+  .fg input, .fg select, .fg textarea { width: 100%; background: var(--bg); border: 1.5px solid var(--border); color: var(--text-h); padding: .75rem .9rem; font-family: 'Sora', sans-serif; font-size: .875rem; border-radius: var(--r); outline: none; transition: all .25s; appearance: none; }
+  .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(20,184,166,.12); background: var(--white); }
+  .fg input::placeholder, .fg textarea::placeholder { color: var(--text-l); }
+  .fg textarea { resize: vertical; min-height: 96px; }
+  .fg select option { background: #fff; color: var(--text-b); }
+  .fbtn { width: 100%; padding: 1rem; margin-top: .5rem; font-size: .8rem; }
+
+  /* === FOOTER === */
+  footer { background: var(--navy-deep); padding: 5rem 0 2rem; }
+  .fg-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 4rem; padding-bottom: 3rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .fb p { color: rgba(255,255,255,.5); font-size: .85rem; margin-top: 1rem; max-width: 300px; line-height: 1.75; }
+  .fdots { display: flex; gap: .4rem; margin-top: 1.5rem; }
+  .fdot { width: 8px; height: 8px; border-radius: 50%; }
+  .fdot:nth-child(1) { background: var(--teal); }
+  .fdot:nth-child(2) { background: rgba(20,184,166,.5); }
+  .fdot:nth-child(3) { background: rgba(20,184,166,.2); }
+  .fc h4 { font-size: .65rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; }
+  .fc ul li { margin-bottom: .6rem; }
+  .fc ul li a { font-size: .84rem; color: rgba(255,255,255,.5); transition: color .25s; }
+  .fc ul li a:hover { color: var(--teal); }
+  .fb-bot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .fb-bot p { font-size: .75rem; color: rgba(255,255,255,.3); margin: 0; }
+  .fb-bot span { font-size: .65rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.25); }
+  footer .logo-text strong { color: #fff; }
+  footer .logo-text span { color: rgba(255,255,255,.45); }
+  footer .logo-mark { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); }
+  footer .logo-mark::after { display: none; }
+
+  /* === SHARED HEADER === */
+  .sh { max-width: 620px; }
+  .sh.c { text-align: center; margin: 0 auto; }
+  .sh h2 { margin: .5rem 0 1rem; }
+  .sh p { color: var(--text-m); font-size: .95rem; }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  .a1 { animation: fadeUp .7s ease both; }
+  .a2 { animation: fadeUp .7s .14s ease both; }
+  .a3 { animation: fadeUp .7s .28s ease both; }
+  .a4 { animation: fadeUp .7s .42s ease both; }
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.on { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; } .d4 { transition-delay: .32s; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1100px) {
+    .svc-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .svc-head { position: static; }
+    .why-lay { grid-template-columns: 1fr; gap: 3rem; }
+    .sec-strip { grid-template-columns: 1fr 1fr; }
+    .ptl { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .ptl::before { display: none; }
+    .ct-lay { grid-template-columns: 1fr; gap: 3rem; }
+    .fg-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .about-img-col { max-width: 500px; }
+    .team-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .team-img-col { max-width: 500px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gi-main { grid-column: 1/3; grid-row: auto; min-height: 280px; }
+    #photo-strip { grid-template-columns: 1fr 1fr; height: auto; }
+    .ps { height: 220px; }
+  }
+  @media (max-width: 820px) {
+    #hero { grid-template-columns: 1fr; }
+    .hr { min-height: 50vh; }
+    .hr-content { padding: 2.5rem 5%; }
+    .hl { padding: 8rem 5% 5rem; }
+    .nav-links { display: none; }
+    .ham { display: flex; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .sec-strip { grid-template-columns: 1fr; }
+    .ptl { grid-template-columns: 1fr; }
+    .cband { flex-direction: column; text-align: center; }
+    .cband-bt { justify-content: center; }
+    .fg-grid { grid-template-columns: 1fr; }
+    .about-pillars { grid-template-columns: 1fr; }
+    .team-img-sm { display: none; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gi-main { min-height: 240px; }
+    .trust-w { flex-wrap: wrap; }
+    .ti { flex: none; width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .ti:last-child { border-bottom: none; }
+    h2 { font-size: 1.9rem; }
+  }
+  @media (max-width: 480px) {
+    .hl-stats { flex-wrap: wrap; gap: 1.2rem; }
+    .fr { grid-template-columns: 1fr; }
+    .fb-bot { flex-direction: column; text-align: center; }
+    .cg { grid-template-columns: 1fr; }
+    .ti { width: 100%; }
+    #photo-strip { grid-template-columns: 1fr; }
+    .ps { height: 200px; }
+    .about-img-accent { display: none; }
+  }
+  </style>
+  </head>
+  <body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav id="nav">
+    <a href="#hero" class="logo">
+      <div class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="logo-text">
+        <strong>AXIS &amp; PILLAR</strong>
+        <span>Real Estate · Dubai</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#sectors">Sectors</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="btn btn-teal nav-cta">Book Consultation</a></li>
+    </ul>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="mob" id="mob">
+    <button class="mob-x" id="mobX">✕</button>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Book Consultation</a>
+  </div>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="hero">
+
+    <!-- LEFT: text panel -->
+    <div class="hl">
+      <div class="hl-cut"></div>
+      <div class="eyebrow a1" style="color:var(--teal)">Powered by 28 Million DLD Data Points</div>
+      <h1 class="a2">Exceptional Dubai<br><span class="serif at">Properties.</span><br>Intelligent Decisions.</h1>
+      <p class="hl-desc a3">We combine premium real estate advisory with institutional-grade data analytics. Every property, every recommendation backed by official Dubai Land Department intelligence.</p>
+      <div class="hl-btns a4">
+        <a href="#contact" class="btn btn-teal">
+          Book A Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">Our Services</a>
+      </div>
+      <div class="hl-stats a4">
+        <div>
+          <div class="sn">28<em>M+</em></div>
+          <div class="sl">DLD Records
+<br>Analyzed</div>
+        </div>
+        <div>
+          <div class="sn">265<em></em></div>
+          <div class="sl">Communities<br>
+Mapped
+</div>
+        </div>
+        <div>
+          <div class="sn">RERA</div>
+          <div class="sl">Licensed &amp;<br>Brokerage</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: photo background + service list -->
+    <div class="hr">
+      <div class="hr-bg"></div>
+      <div class="hr-overlay"></div>
+      <div class="hr-content">
+        <div class="hr-label">Our Core Services</div>
+        <div class="spills">
+          <div class="sp">
+            <div class="sp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <span class="sp-tx">Buy Property</span>
+          </div>
+          <div class="sp">
+            <div class="sp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <span class="sp-tx">Off-Plan Advisory</span>
+          </div>
+          <div class="sp">
+            <div class="sp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></svg></div>
+            <span class="sp-tx">Investment Advisory</span>
+          </div>
+          <div class="sp">
+            <div class="sp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <span class="sp-tx">Property Management</span>
+          </div>
+          <!-- <div class="sp">
+            <div class="sp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4"/></svg></div>
+            <span class="sp-tx">Painting Contracting</span>
+          </div>
+          <div class="sp">
+            <div class="sp-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+            <span class="sp-tx">False Ceiling &amp; Light Partitions</span>
+          </div> -->
+        </div>
+        <div class="hero-cert">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          RERA Licensed &amp; DLD Data Partner &nbsp;<span>Official</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TRUST STRIP ═══════════ -->
+  <div id="trust">
+    <div class="trust-w">
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Official DLD Data Partner</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>265 Communities Mapped
+</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Official DLD Data Partner</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>28M+ Records Analyzed</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Institutional-Grade Analytics
+</div>
+  <!-- duplicate for seamless loop -->
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Official DLD Data Partner</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>265 Communities Mapped</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Official DLD Data Partner</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>28M+ Records Analyzed</div>
+  <div class="ti"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Institutional-Grade Analytics</div>
+</div>
+  </div>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="sh reveal">
+        <div class="eyebrow">Who We Are</div>
+        <h2>Data-Driven.<br/> <span class="serif" style="color:var(--teal)">Every Decision.</span></h2>
+        <p>Axis & Pillar Real Estate is a RERA-licensed Dubai brokerage built on institutional-grade market intelligence. While other brokerages rely on instinct, we've built a proprietary platform powered by 28 million official Dubai Land Department records.</p>
+      </div>
+
+      <div class="about-layout">
+        <!-- Photo column -->
+        <div class="about-img-col reveal">
+          <div class="about-stat-badge">
+            <div class="asb-num">28M+</div>
+            <span class="asb-txt">DLD Records
+<br>Analyzed</span>
+          </div>
+          <div class="about-img-main">
+            <img
+              src="hands-section.png"
+              alt="Nova & Anchor team on construction site"
+              loading="lazy"
+            >
+          </div>
+          <div class="about-img-accent">
+            <img
+              src="section.avif"
+              alt="Engineer reviewing building plans"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="about-text reveal d2">
+          <div class="eyebrow">Our Edge</div>
+          <h2>Intelligence Where Others, <span class="serif" style="color:var(--teal)">Have Only Guesses </span></h2>
+          <p>Every recommendation we make is backed by real transaction data, verified rental yields, and institutional-grade analytics. We cross-reference 9.7 million rental contracts against 1.6 million sales to calculate verified gross and net yields by community, bedroom type, and building.</p>
+          <p>Our Investment Scoring Engine quantifies what others guess — every community scored on yield, capital growth, liquidity, and supply pipeline.</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <h4>Investment Scoring Engine</h4>
+              <p>Every community scored on yield, capital growth, liquidity, and supply pipeline.</p>
+            </div>
+            <div class="pillar">
+              <h4>Community Intelligence</h4>
+              <p>Deep profiles for 265 Dubai communities: price trends, CAGR, rental demand, and supply pipeline.</p>
+            </div>
+            <div class="pillar">
+              <h4>Real-Time Yield Analysis</h4>
+              <p>Verified gross and net yields by community, bedroom type, and building from live DLD data.</p>
+            </div>
+            <div class="pillar">
+              <h4>Client Intelligence Reports</h4>
+              <p>Bespoke, data-backed investment memos — institutional-grade analysis, not brochures.</p>
+            </div>
+          </div>
+          <div style="margin-top:2rem">
+            <a href="#contact" class="btn btn-navy">Book a Consultation <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SERVICES ═══════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="svc-layout">
+        <div class="svc-head reveal">
+          <div class="eyebrow">What We Do</div>
+          <h2>Full-Service Brokerage.<br>One Trusted Partner.</h2>
+          <p>End-to-end real estate services backed by deep market knowledge and a client-first approach — from search to handover.</p>
+          <a href="#contact" class="btn btn-navy">
+            Book Consultation
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="svc-grid">
+          <div class="sv reveal">
+            <span class="sv-n">01</span>
+            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <h3>Buy Property</h3>
+            <p>Central AC, split systems, VRF/VRV, ducted units, chilled water, and AHUs. Fully ASHRAE and UAE authority compliant.</p>
+            <div class="chips"><span class="chip">Residential</span><span class="chip">Villas</span><span class="chip">Apartments</span></div>
+          </div>
+          <div class="sv reveal d1">
+            <span class="sv-n">02</span>
+            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <h3>Off-Plan Advisory</h3>
+            <p>Access exclusive off-plan launches from premier developers. Payment plan analysis and project due diligence included on every recommendation.</p>
+            <div class="chips"><span class="chip">Exclusive Launches</span><span class="chip">Payment Plans</span><span class="chip">Due Diligence</span></div>
+          </div>
+          <div class="sv reveal d2">
+            <span class="sv-n">03</span>
+            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></svg></div>
+            <h3>Investment Advisory</h3>
+            <p>Data-driven investment strategies. ROI projections, portfolio diversification, and market intelligence for decisions backed by 28M+ DLD records.</p>
+            <div class="chips"><span class="chip">ROI Projections</span><span class="chip">Yield Analysis</span><span class="chip">Portfolio Strategy</span></div>
+          </div>
+          <div class="sv reveal d3">
+            <span class="sv-n">04</span>
+            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3>Property Management</h3>
+            <p>Hands-off ownership. Tenant sourcing, rent collection, maintenance, and regular reporting for your investment properties across Dubai.</p>
+            <div class="chips"><span class="chip">Tenant Sourcing</span><span class="chip">Rent Collection</span><span class="chip">Reporting</span></div>
+          </div>
+          <!-- <div class="sv reveal">
+            <span class="sv-n">05</span>
+            <div class="sv-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+            <h3>Painting Contracting</h3>
+            <p>Interior and exterior painting — surface preparation, primer, anti-fungal coatings, textured and decorative finishes.</p>
+            <div class="chips"><span class="chip">Interior</span><span class="chip">Exterior</span><span class="chip">Textured Finishes</span></div>
+          </div>
+          <div class="sv reveal d1">
+            <span class="sv-n">06</span>
+            <div class="sv-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+            <h3>False Ceiling &amp; Light Partitions</h3>
+            <p>Gypsum, GRC, and metal ceiling systems. Glass and gypsum partitions with acoustic and fire-rated options available.</p>
+            <div class="chips"><span class="chip">Gypsum/GRC</span><span class="chip">Metal Ceilings</span><span class="chip">Acoustic Panels</span></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ WHY US ═══════════ -->
+  <section id="why">
+    <div class="container">
+      <div class="why-lay">
+        <div class="wl reveal">
+          <div class="eyebrow" style="color:var(--teal)">Why Axis &amp; Pillar</div>
+          <h2>Where Data Meets <em>Opportunity</em></h2>
+          <p>In a Dubai market full of brokerages, we differentiate through proprietary intelligence, RERA compliance expertise, and a client-first model that puts your investment outcomes squarely at the center.</p>
+          <div class="wlist">
+            <div class="wli">
+              <div class="wli-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div class="wli-tx">
+                <h4>Official DLD Data Partnership</h4>
+                <p>28 million Dubai Land Department records powering every recommendation — not guesswork, real verified transaction intelligence.</p>
+              </div>
+            </div>
+            <div class="wli">
+              <div class="wli-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div class="wli-tx">
+                <h4>Verified Yield Analysis</h4>
+                <p>9.7 million rental contracts cross-referenced against 1.6 million sales — verified gross and net yields, not estimates.</p>
+              </div>
+            </div>
+            <div class="wli">
+              <div class="wli-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <div class="wli-tx">
+                <h4>Investment Scoring Engine</h4>
+                <p>Every community scored on yield, capital growth, liquidity, and supply pipeline. We quantify what others can only guess.</p>
+              </div>
+            </div>
+            <div class="wli">
+              <div class="wli-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+              <div class="wli-tx">
+                <h4>Dedicated Advisory Team</h4>
+                <p>A personal relationship manager and senior investment advisor assigned exclusively to your portfolio — not a call centre</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal d2">
+          <div class="cg">
+            <div class="cc"><div class="cc-v">28<em>M+</em></div><span class="cc-l">DLD Records<br>Analyzed</span></div>
+            <div class="cc"><div class="cc-v">6.8<em>%</em></div><span class="cc-l">Average Dubai<br>
+Rental Yield</span></div>
+            <div class="cc"><div class="cc-v">265<em></em></div><span class="cc-l">Communities<br>
+Mapped</span></div>
+            <div class="cc"><div class="cc-v">48<em>h+</em></div><span class="cc-l">Intelligence 
+<br>Report Turnaround</span></div>
+          </div>
+          <div class="why-cta">
+            <a href="#contact" class="btn btn-teal">Get a Free Consultation <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PHOTO STRIP ═══════════ -->
+  <div id="photo-strip">
+    <div class="ps">
+      <img src="gallery (2).png" alt="HVAC technician working on air conditioning unit" loading="lazy">
+      <div class="ps-cap"><span>Buy Property</span></div>
+    </div>
+    <div class="ps">
+      <img src="gallery.png" alt="Construction team on active project site" loading="lazy">
+      <div class="ps-cap"><span>Off-Plan Advisory</span></div>
+    </div>
+    <div class="ps">
+      <img src="gallery4.png" alt="Modern building construction in progress" loading="lazy">
+      <div class="ps-cap"><span>Investment Advisory
+</span></div>
+    </div>
+    <div class="ps">
+      <img src="gallery3.png" alt="Completed modern building exterior" loading="lazy">
+      <div class="ps-cap"><span>Property Management
+</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════ TEAM & TESTIMONIALS ═══════════ -->
+  <section id="team">
+    <div class="container">
+      <div class="team-layout">
+        <!-- Photo column -->
+        <div class="team-img-col reveal">
+          <div class="team-pill">Our Advisors</div>
+          <div class="team-img-main">
+            <img
+              src="section.png"
+              alt="Project manager consulting with client"
+              loading="lazy"
+            >
+          </div>
+          <div class="team-img-sm">
+            <img
+              src="section (2).avif"
+              alt="Electrical installation work in progress"
+              loading="lazy"
+            >
+          </div>
+        </div>
+
+        <!-- Text + testimonials column -->
+        <div class="team-text reveal d2">
+          <div class="eyebrow">Our Team &amp; Clients</div>
+          <h2>Senior Advisors Behind <span class="serif" style="color:var(--teal)">Every Deal</span></h2>
+          <p>Our investment advisors and market analysts bring years of Dubai real estate expertise to every client engagement. We're not a high-volume transactional firm — we're a team that invests time, data, and expertise into your outcome.</p>
+          <p>We believe great results speak for themselves. Here's what our clients say.</p>
+
+          <div class="tqs">
+            <div class="tq">
+              <div class="tq-body">"Axis & Pillar's data reports changed how I think about Dubai property investment. They showed me verified yield data for every community I was considering — not estimates. Bought two apartments in Business Bay and couldn't be happier with the returns."</div>
+              <div class="tq-author">
+                <div class="tq-av">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop&facepad=2" alt="Khalid Al Mansouri" loading="lazy">
+                </div>
+                <div>
+                  <div class="tq-name">James Whitfield</div>
+                  <div class="tq-role">Investment Buyer, London</div>
+                </div>
+              </div>
+            </div>
+            <div class="tq">
+              <div class="tq-body">"The Private Office service is exactly what a high-net-worth investor needs. Off-market access, a dedicated advisor, and intelligence memos that rival what institutional funds produce. Highly recommend for serious buyers."</div>
+              <div class="tq-author">
+                <div class="tq-av">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&q=80&auto=format&fit=crop&facepad=2" alt="Sarah Okafor" loading="lazy">
+                </div>
+                <div>
+                  <div class="tq-name">Fatima Al Rashidi</div>
+                  <div class="tq-role">Portfolio Investor, Abu Dhabi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SITE WORK GALLERY ═══════════ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="sh reveal">
+        <div class="eyebrow">Featured Listings</div>
+        <h2>Exceptional Properties <span class="serif" style="color:var(--teal)">Across Dubai.</span></h2>
+        <p>Hand-picked selections from our portfolio of premium residential and investment properties across Dubai's most sought-after communities.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gi gi-main reveal">
+          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80&auto=format&fit=crop" alt="Large-scale construction project in UAE" loading="lazy">
+          <div class="gi-ov"><span>Dubai Hills Estate · AED 12.5M</span></div>
+        </div>
+        <div class="gi gi-sm reveal d1">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80&auto=format&fit=crop" alt="Interior tiling work completed" loading="lazy">
+          <div class="gi-ov"><span>Dubai Marina · AED 8.9M</span></div>
+        </div>
+        <div class="gi gi-sm reveal d2">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Plumbing and pipe installation" loading="lazy">
+          <div class="gi-ov"><span>Palm Jumeirah · AED 2.1M</span></div>
+        </div>
+        <div class="gi gi-sm reveal d1">
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&auto=format&fit=crop" alt="Interior painting and finishing" loading="lazy">
+          <div class="gi-ov"><span>Downtown Dubai · For Rent</span></div>
+        </div>
+        <div class="gi gi-sm reveal d2">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format&fit=crop" alt="Completed residential building handover" loading="lazy">
+          <div class="gi-ov"><span>Business Bay · Off-Plan</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ SECTORS ═══════════ -->
+  <section id="sectors">
+    <div class="container">
+      <div class="sh reveal">
+        <div class="eyebrow">Who We Serve</div>
+        <h2>Built for Every<br>Type of Investor</h2>
+        <p>Our capabilities match the exacting demands of Dubai's most discerning property buyers, investors, and owners.</p>
+      </div>
+      <div class="sec-strip">
+        <div class="sc reveal">
+          <span class="sc-n">01 / Client</span>
+          <div class="sc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>End-User Buyers</h3>
+          <p>First-time buyers and upgraders seeking their dream home in Dubai. Expert guidance from search through handover with full DLD data backing.</p>
+          <div class="sc-arr">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="sc reveal d1">
+          <span class="sc-n">02 / Client</span>
+          <div class="sc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+          <h3>Investment Buyers</h3>
+          <p>Return-focused investors leveraging our yield analysis and community intelligence to time market entry with precision and confidence.</p>
+          <div class="sc-arr">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="sc reveal d2">
+          <span class="sc-n">03 / Client</span>
+          <div class="sc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h3>HNW & Private Clients</h3>
+          <p>High-net-worth individuals and family offices accessing off-market opportunities and bespoke portfolio strategy through our Private Office.</p>
+          <div class="sc-arr">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+        <div class="sc reveal d3">
+          <span class="sc-n">04 / Client</span>
+          <div class="sc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+          <h3>Overseas Investors</h3>
+          <p>International buyers guided through Dubai's market remotely — virtual tours, secure transactions, and visa-linked investment structuring.</p>
+          <div class="sc-arr">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA BAND ═══════════ -->
+  <section id="cta-band">
+    <div class="container">
+      <div class="cband">
+        <div class="cband-tx">
+          <div class="eyebrow" style="color:rgba(255,255,255,.75)">Start Your Search</div>
+          <h2>Have a Property Goal?<br>Let's Achieve It.</h2>
+          <p>Share your investment goals or search criteria — we'll deliver a comprehensive intelligence report and shortlist within 48 hours.</p>
+        </div>
+        <div class="cband-bt">
+          <a href="#contact" class="btn btn-wf">
+            Book a Free Consultation
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="tel:+971000000000" class="btn btn-ghost">Call Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROCESS ═══════════ -->
+  <section id="process">
+    <div class="container">
+      <div class="sh c reveal">
+        <div class="eyebrow">How We Work</div>
+        <h2>The Journey from Search
+to Handover</h2>
+        <p>A structured, intelligence-driven process built to protect your investment, maximise your returns, and minimise uncertainty — every time.</p>
+      </div>
+      <div class="ptl">
+        <div class="pt reveal">
+          <div class="pt-b"><span class="pn">01</span></div>
+          <h3>Consultation &amp; Goal Setting</h3>
+          <p>Free advisory session — we understand your goals, budget, and timeline, and match them to verified market data before any search begins.</p>
+        </div>
+        <div class="pt reveal d1">
+          <div class="pt-b"><span class="pn">02</span></div>
+          <h3>Intelligence Report</h3>
+          <p>A bespoke, data-backed investment memo with verified yields, community analysis, and a curated shortlist — within 48 hours.</p>
+        </div>
+        <div class="pt reveal d2">
+          <div class="pt-b"><span class="pn">03</span></div>
+          <h3>Viewings & Negotiation</h3>
+          <p>Dedicated advisor managing viewings, due diligence, offer negotiations, and all legal and DLD documentation on your behalf.</p>
+        </div>
+        <div class="pt reveal d3">
+          <div class="pt-b"><span class="pn">04</span></div>
+          <h3>Handover & Ongoing Support</h3>
+          <p>Title deed transfer, snagging support, and optional property management — so your investment performs long after keys are handed over.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="ct-lay">
+        <div class="ct-info reveal">
+          <div class="eyebrow">Get in Touch</div>
+          <h2>Let's Discuss<br>Your Investment
+</h2>
+          <div class="ci-list">
+            <div class="ci-item">
+              <div class="ci-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div class="ci-tx"><strong>Location</strong><span>Dubai, United Arab Emirates</span></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+              <div class="ci-tx"><strong>Phone</strong><a href="tel:+971000000000">+971 XX XXX XXXX</a></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div class="ci-tx"><strong>Email</strong><a href="mailto:info@axisandpillar.com">info@novaandanchor.com</a></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div class="ci-tx"><strong>Working Hours</strong><span>Mon–Fri 8:00 AM – 6:00 PM · Sat 8:00 AM – 1:00 PM</span></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <div class="ci-tx"><strong>Website</strong><a href="https://www.novaandanchor.com">www.axisandpillar.com</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-form reveal d2">
+          <div class="ct-fh">
+            <h3>Book a Consultation</h3>
+            <p>Fill in your details and our advisory team will respond within 24 hours with a detailed market brief.</p>
+          </div>
+          <form id="qf" onsubmit="submitForm(event)">
+            <div class="fr">
+              <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your full name" required></div>
+              <div class="fg"><label>Company</label><input type="text" placeholder="Company name"></div>
+            </div>
+            <div class="fr">
+              <div class="fg"><label>Phone *</label><input type="tel" placeholder="+971 XX XXX XXXX" required></div>
+              <div class="fg"><label>Email *</label><input type="email" placeholder="you@email.com" required></div>
+            </div>
+            <div class="fg">
+              <label>Service Required *</label>
+              <select required>
+                <option value="" disabled selected>Select a service</option>
+                <option>HVAC Installation &amp; Maintenance</option>
+                <option>Electromechanical Equipment Installation</option>
+                <option>Plumbing &amp; Sanitary Installation</option>
+                <option>Floor &amp; Wall Tiling</option>
+                <option>Painting Contracting</option>
+                <option>False Ceiling &amp; Light Partitions</option>
+                <option>Multiple Services / Full Fitout</option>
+                <option>Annual Maintenance Contract (AMC)</option>
+              </select>
+            </div>
+            <div class="fg"><label>Project Location</label><input type="text" placeholder="Dubai, Abu Dhabi, Sharjah…"></div>
+            <div class="fg"><label>Project Description</label><textarea placeholder="Tell us about your property goals, preferred communities, timeline, and any specific requirements…"></textarea></div>
+            <button type="submit" class="btn btn-teal fbtn">
+              Submit Quote Request
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <div class="container">
+      <div class="fg-grid">
+        <div class="fb">
+          <a href="#hero" class="logo">
+            <div class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+            <div class="logo-text"><strong>AXIS &amp; PILLAR</strong><span>Real Estate · Dubai</span></div>
+          </a>
+          <p>RERA-licensed Dubai real estate brokerage. Built on data. Driven by intelligence. Powered by 28M+ DLD records.</p>
+          <div class="fdots"><div class="fdot"></div><div class="fdot"></div><div class="fdot"></div></div>
+        </div>
+        <div class="fc">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Buy Property</a></li>
+            <li><a href="#services">Off-Plan Advisory</a></li>
+            <li><a href="#services">Investment Advisory</a></li>
+            <li><a href="#services">Property Management</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#gallery">Our Work</a></li>
+            <li><a href="#contact">Book Consultation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fb-bot">
+        <p>© 2025 Nova &amp; Anchor Technical Services LLC S.O.C. All rights reserved.</p>
+        <span>novaandanchor.com · Dubai, UAE</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('stuck', window.scrollY > 50));
+
+  // Mobile menu
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob');
+  const mobX = document.getElementById('mobX');
+  ham.addEventListener('click', () => mob.classList.add('open'));
+  mobX.addEventListener('click', () => mob.classList.remove('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Form submit
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.fbtn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ Sent! We\'ll respond within 24 hours.';
+    btn.style.cssText = 'background:#0D9488;width:100%;padding:1rem;border-radius:999px;color:#fff;font-family:Sora,sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:default;';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.removeAttribute('style');
+      btn.className = 'btn btn-teal fbtn';
+      btn.disabled = false;
+      e.target.reset();
+    }, 5000);
+  }
+  </script>
+  </body>
+  </html>
