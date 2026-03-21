@@ -291,16 +291,133 @@
   .tq-role { font-size: .68rem; color: var(--text-m); }
 
   /* === GALLERY === */
-  #gallery { padding: 6rem 0; background: var(--white); }
-  .gallery-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; margin-top: 3rem; }
-  .gi { border-radius: var(--rlg); overflow: hidden; position: relative; }
-  .gi img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
-  .gi:hover img { transform: scale(1.06); }
-  .gi-main { grid-column: 1; grid-row: 1/3; min-height: 420px; }
-  .gi-sm { min-height: 195px; }
-  .gi-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(9,29,49,.65) 0%, transparent 50%); opacity: 0; transition: opacity .35s; display: flex; align-items: flex-end; padding: 1.2rem; }
-  .gi:hover .gi-ov { opacity: 1; }
-  .gi-ov span { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+/* === FEATURED LISTINGS === */
+#gallery { padding: 6rem 0; background: var(--bg); }
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.lc {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--rlg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow .35s ease, transform .35s ease;
+}
+.lc:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-lg);
+}
+
+.lc-img {
+  position: relative;
+  overflow: hidden;
+  height: 215px;
+}
+.lc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.lc:hover .lc-img img { transform: scale(1.06); }
+
+.lc-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #fff;
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: var(--pill);
+}
+
+.lc-wish {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  transition: all .25s;
+}
+.lc-wish:hover { transform: scale(1.1); background: #fff; }
+
+.lc-tour {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  background: rgba(9,29,49,.8);
+  color: #fff;
+  font-size: .6rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--pill);
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lc-body { padding: 1.5rem 1.5rem 1.6rem; }
+
+.lc-price {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: .3rem;
+  letter-spacing: -.01em;
+}
+
+.lc-name {
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--text-b);
+  margin-bottom: .5rem;
+  line-height: 1.4;
+}
+
+.lc-loc {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .7rem;
+  color: var(--text-m);
+  margin-bottom: 1.1rem;
+}
+
+.lc-div { height: 1px; background: var(--border); margin-bottom: 1rem; }
+
+.lc-meta {
+  display: flex;
+  gap: 1.4rem;
+  font-size: .72rem;
+  color: var(--text-m);
+  flex-wrap: wrap;
+}
+.lc-meta span { display: inline-flex; align-items: center; gap: .35rem; }
+.lc-meta .ready  { color: var(--teal); font-weight: 700; }
+.lc-meta .offplan { color: var(--teal); font-weight: 700; }
+
+@media (max-width: 1100px) { .listings-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px)  { .listings-grid { grid-template-columns: 1fr; } }
 
   /* === SECTORS === */
   #sectors { padding: 6rem 0; background: var(--bg); }
@@ -891,28 +1008,49 @@ Mapped
         <div class="svc-grid">
           <div class="sv reveal">
             <span class="sv-n">01</span>
-            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+           <div class="sv-ic">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+</div>
             <h3>Buy Property</h3>
             <p>Expert guidance through Dubai's property market. From search to handover, we manage every detail of your purchase.</p>
             <div class="chips"><span class="chip">Residential</span><span class="chip">Villas</span><span class="chip">Apartments</span></div>
           </div>
           <div class="sv reveal d1">
             <span class="sv-n">02</span>
-            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+           <div class="sv-ic">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+    <polyline points="2 17 12 22 22 17"/>
+    <polyline points="2 12 12 17 22 12"/>
+  </svg>
+</div>
             <h3>Off-Plan Advisory</h3>
             <p>Access exclusive off-plan launches from premier developers. Payment plan analysis and project due diligence included.</p>
             <div class="chips"><span class="chip">Exclusive Launches</span><span class="chip">Payment Plans</span><span class="chip">Due Diligence</span></div>
           </div>
           <div class="sv reveal d2">
             <span class="sv-n">03</span>
-            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></svg></div>
+            <div class="sv-ic">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="14" width="4" height="7" rx="1"/>
+    <rect x="10" y="9"  width="4" height="12" rx="1"/>
+    <rect x="16" y="4"  width="4" height="17" rx="1"/>
+  </svg>
+</div>
             <h3>Investment Advisory</h3>
             <p>Data-driven investment strategies. ROI projections, portfolio diversification, and market intelligence for informed decisions.</p>
             <div class="chips"><span class="chip">ROI Projections</span><span class="chip">Yield Analysis</span><span class="chip">Portfolio Strategy</span></div>
           </div>
           <div class="sv reveal d3">
             <span class="sv-n">04</span>
-            <div class="sv-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="sv-ic">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </svg>
+</div>
             <h3>Property Management</h3>
             <p>Hands-off ownership. Tenant sourcing, rent collection, maintenance, and regular reporting for your investment properties.</p>
             <div class="chips"><span class="chip">Tenant Sourcing</span><span class="chip">Rent Collection</span><span class="chip">Reporting</span></div>
@@ -1237,39 +1375,110 @@ Mapped</span></div>
   </div>
 </section>
   
-  <!-- ═══════════ SITE WORK GALLERY ═══════════ -->
-  <section id="gallery">
-    <div class="container">
-      <div class="sh reveal">
-        <div class="eyebrow">Featured Listings</div>
-        <h2>Exceptional Properties <span class="serif" style="color:var(--teal)">Across Dubai.</span></h2>
-        <p>Hand-picked selections from our portfolio of premium residential and investment properties across Dubai's most sought-after communities.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gi gi-main reveal">
-          <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80&auto=format&fit=crop" alt="Large-scale construction project in UAE" loading="lazy">
-          <div class="gi-ov"><span>Dubai Hills Estate · AED 12.5M</span></div>
-        </div>
-        <div class="gi gi-sm reveal d1">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80&auto=format&fit=crop" alt="Interior tiling work completed" loading="lazy">
-          <div class="gi-ov"><span>Dubai Marina · AED 8.9M</span></div>
-        </div>
-        <div class="gi gi-sm reveal d2">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Plumbing and pipe installation" loading="lazy">
-          <div class="gi-ov"><span>Palm Jumeirah · AED 2.1M</span></div>
-        </div>
-        <div class="gi gi-sm reveal d1">
-          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80&auto=format&fit=crop" alt="Interior painting and finishing" loading="lazy">
-          <div class="gi-ov"><span>Downtown Dubai · For Rent</span></div>
-        </div>
-        <div class="gi gi-sm reveal d2">
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&auto=format&fit=crop" alt="Completed residential building handover" loading="lazy">
-          <div class="gi-ov"><span>Business Bay · Off-Plan</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
+ <!-- ═══════════ FEATURED LISTINGS ═══════════ -->
+<section id="gallery">
+  <div class="container">
+
+    <!-- Header -->
+    <div style="margin-bottom:3.5rem;">
+      <div class="eyebrow">Featured Listings</div>
+      <h2 style="margin:.4rem 0 1rem;">
+        Exceptional<br>
+        <span class="serif" style="color:var(--teal)">Properties</span>
+      </h2>
+      <p style="color:var(--text-m);max-width:480px;font-size:.88rem;line-height:1.75;font-weight:300;">Hand-picked selections from our portfolio of premium residential and investment properties across Dubai.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="listings-grid">
+
+      <!-- Card 1 — Premium -->
+      <div class="lc reveal">
+        <div class="lc-img">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80&auto=format&fit=crop" alt="Contemporary Villa with Private Pool" loading="lazy">
+          <span class="lc-badge" style="background:var(--navy-deep);">Premium</span>
+          <button class="lc-wish">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <span class="lc-tour">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+            360° Tour
+          </span>
+        </div>
+        <div class="lc-body">
+          <div class="lc-price">AED 12,500,000</div>
+          <div class="lc-name">Contemporary Villa with Private Pool</div>
+          <div class="lc-loc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Dubai Hills Estate
+          </div>
+          <div class="lc-div"></div>
+          <div class="lc-meta">
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>5 Beds</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>7,200 sqft</span>
+            <span class="ready"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 — Exclusive -->
+      <div class="lc reveal d1">
+        <div class="lc-img">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80&auto=format&fit=crop" alt="Sky Penthouse with Marina Views" loading="lazy">
+          <span class="lc-badge" style="background:var(--teal-dk);">Exclusive</span>
+          <button class="lc-wish">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+          <span class="lc-tour">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+            360° Tour
+          </span>
+        </div>
+        <div class="lc-body">
+          <div class="lc-price">AED 8,900,000</div>
+          <div class="lc-name">Sky Penthouse with Marina Views</div>
+          <div class="lc-loc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Dubai Marina
+          </div>
+          <div class="lc-div"></div>
+          <div class="lc-meta">
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>4 Beds</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>5,400 sqft</span>
+            <span class="ready"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 — Off-Plan -->
+      <div class="lc reveal d2">
+        <div class="lc-img">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80&auto=format&fit=crop" alt="Waterfront Apartment Payment Plan" loading="lazy">
+          <span class="lc-badge" style="background:var(--navy-deep);">Off-Plan</span>
+          <button class="lc-wish">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="lc-body">
+          <div class="lc-price">AED 2,100,000</div>
+          <div class="lc-name">Waterfront Apartment, Payment Plan</div>
+          <div class="lc-loc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Palm Jumeirah
+          </div>
+          <div class="lc-div"></div>
+          <div class="lc-meta">
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>2 Beds</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>1,850 sqft</span>
+            <span class="offplan"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Q4 2027</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- ═══════════ SECTORS ═══════════ -->
   <section id="sectors">
     <div class="container">
